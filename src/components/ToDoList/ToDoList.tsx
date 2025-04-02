@@ -1,10 +1,10 @@
 import { TTodo } from "../../types/types";
 import {
-  ListContainer,
-  TodoItem,
-  TodoCheckWrapper,
+  StyledListContainer,
+  StyledTodoItem,
+  StyledTodoCheckWrapper,
   StyledCheckIcon,
-  TodoText,
+  StyledTodoText,
 } from "./ToDoList.styles";
 
 /*
@@ -22,20 +22,20 @@ type Props = {
 
 const ToDoList = ({ todos, onToggle }: Props) => {
   return (
-    <ListContainer>
+    <StyledListContainer>
       {todos.map((todo, index) => (
-        <TodoItem
+        <StyledTodoItem
           key={todo.id}
           style={{ animationDelay: `${index * 0.05}s` }}
           onClick={() => onToggle?.(todo.id)}
         >
-          <TodoCheckWrapper $isCompleted={todo.isCompleted}>
+          <StyledTodoCheckWrapper $isCompleted={todo.isCompleted}>
             <StyledCheckIcon $isCompleted={todo.isCompleted} />
-          </TodoCheckWrapper>
-          <TodoText $isCompleted={todo.isCompleted}>{todo.text}</TodoText>
-        </TodoItem>
+          </StyledTodoCheckWrapper>
+          <StyledTodoText $isCompleted={todo.isCompleted}>{todo.text}</StyledTodoText>
+        </StyledTodoItem>
       ))}
-    </ListContainer>
+    </StyledListContainer>
   );
 };
 

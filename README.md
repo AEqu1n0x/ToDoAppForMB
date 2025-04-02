@@ -1,5 +1,6 @@
 # Приложение To Do App 
 - Выполнил tg: @AlexEquinox
+- GitHub Pages: https://aequ1n0x.github.io/ToDoAppForMB/
 
 Порядок запуска:
 - Установить зависимости (npm i)

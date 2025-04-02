@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { CheckIcon } from "@heroicons/react/24/outline";
 
-export const ListContainer = styled.ul`
+export const StyledListContainer = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
 `;
 
-export const TodoItem = styled.li`
+export const StyledTodoItem = styled.li`
   height: 60px;
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@ export const TodoItem = styled.li`
   }
 `;
 
-export const TodoCheckWrapper = styled.div<{ $isCompleted: boolean }>`
+export const StyledTodoCheckWrapper = styled.div<{ $isCompleted: boolean }>`
   width: 30px;
   height: 30px;
   min-width: 30px;
@@ -61,7 +61,7 @@ export const StyledCheckIcon = styled(CheckIcon)<{ $isCompleted: boolean }>`
   cursor: pointer;
 `;
 
-export const TodoText = styled.span<{ $isCompleted: boolean }>`
+export const StyledTodoText = styled.span<{ $isCompleted: boolean }>`
   cursor: pointer;
   flex: 1;
   font-size: 24px;

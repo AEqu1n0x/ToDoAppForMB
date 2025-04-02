@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FilterContainer = styled.div`
+export const StyledFilterContainer = styled.div`
   height: 60px;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@ export const FilterContainer = styled.div`
   }
 `;
 
-export const FilterButton = styled.button<{ $active?: boolean }>`
+export const StyledFilterButton = styled.button<{ $active: boolean }>`
   background: none;
   border: none;
   color: #777;
@@ -27,24 +27,18 @@ export const FilterButton = styled.button<{ $active?: boolean }>`
   padding: 3px 7px;
   cursor: pointer;
   border-radius: 3px;
-  border: ${(props) => (props.$active ? "2px solid #e9d9d8" : "1px solid transparent")};
-  &:hover {
-    border-color: #dbdbdb;
+  border: 1px solid ${(props) => (props.$active ? "#e9d9d8" : "transparent")};
+
+  &[data-active="true"] {
+    border-color: #e9d9d8;
   }
 
-  ${({ $active }) =>
-    $active &&
-    `
-    border-color: #e9d9d8;
-  `}
-
-  /* Для тестов */
-  &.active {
+  &:hover {
     border-color: #e9d9d8;
   }
 `;
 
-export const ClearButton = styled.button`
+export const StyledClearButton = styled.button`
   background: none;
   border: none;
   color: #777;

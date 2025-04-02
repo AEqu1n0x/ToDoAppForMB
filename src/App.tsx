@@ -11,7 +11,7 @@ import {
 import ToDoForm from "./components/ToDoForm/ToDoForm";
 import ToDoList from "./components/ToDoList/ToDoList";
 import FilterButtons from "./components/FilterButtons/FilterButtons";
-import { TTodo } from "./types/types";
+import { TTodo, TFilterType } from "./types/types";
 
 /*
   Главный компонент приложения Todo:
@@ -24,7 +24,7 @@ import { TTodo } from "./types/types";
 function App() {
   const [visibleTodos, setVisibleTodos] = useState(true);
   const [todos, setTodos] = useState<TTodo[]>([]);
-  const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
+  const [filter, setFilter] = useState<TFilterType>("all");
 
   const filteredTodos = todos.filter((todo) => {
     if (filter === "active") return !todo.isCompleted;
@@ -69,6 +69,7 @@ function App() {
                   completedCount={completedCount}
                   onFilterChange={setFilter}
                   onClearCompleted={clearCompleted}
+                  currentFilter={filter}
                 />
               </>
             )}
